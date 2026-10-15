@@ -10,7 +10,8 @@
 [Italienisch](/docs_i18n/README_it.md)/
 [Latein](/docs_i18n/README_la.md)/
 [Malaiisch](/docs_i18n/README_ms.md)/
-[Russisch](/docs_i18n/README_ru.md)
+[Russisch](/docs_i18n/README_ru.md)/
+[Vietnamesisch](/docs_i18n/README_vi.md)
 *Außer Japanisch sind alle Übersetzungen maschinell.
 
 ## VCClient

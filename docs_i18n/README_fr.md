@@ -10,7 +10,8 @@
 [Italien](/docs_i18n/README_it.md)/
 [Latin](/docs_i18n/README_la.md)/
 [Malais](/docs_i18n/README_ms.md)/
-[Russe](/docs_i18n/README_ru.md)
+[Russe](/docs_i18n/README_ru.md)/
+[Vietnamien](/docs_i18n/README_vi.md)
 *Les langues autres que le japonais sont traduites automatiquement.
 
 ## VCClient

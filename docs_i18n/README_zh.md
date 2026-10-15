@@ -10,7 +10,8 @@
 [意大利语](/docs_i18n/README_it.md)/
 [拉丁语](/docs_i18n/README_la.md)/
 [马来语](/docs_i18n/README_ms.md)/
-[俄语](/docs_i18n/README_ru.md)
+[俄语](/docs_i18n/README_ru.md)/
+[越南语](/docs_i18n/README_vi.md)
 *除日语外，其他语言均为机器翻译。
 
 ## VCClient

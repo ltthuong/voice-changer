@@ -1,6 +1,6 @@
 # Realtime Voice Changer Client for RVC チュートリアル(v.1.5.3.13)
 
-[English](/tutorials/tutorial_rvc_en_latest.md) [Korean/한국어](/tutorials/tutorial_rvc_ko_latest.md)
+[English](/tutorials/tutorial_rvc_en_latest.md) [Korean/한국어](/tutorials/tutorial_rvc_ko_latest.md) [Vietnamese/Tiếng Việt](/tutorials/tutorial_rvc_vi_latest.md)
 
 # はじめに
 

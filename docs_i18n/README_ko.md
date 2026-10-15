@@ -10,7 +10,8 @@
 [이탈리아어](/docs_i18n/README_it.md)/
 [라틴어](/docs_i18n/README_la.md)/
 [말레이어](/docs_i18n/README_ms.md)/
-[러시아어](/docs_i18n/README_ru.md)
+[러시아어](/docs_i18n/README_ru.md)/
+[베트남어](/docs_i18n/README_vi.md)
 *일본어 외에는 기계 번역입니다.
 
 ## VCClient

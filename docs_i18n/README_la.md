@@ -10,7 +10,8 @@
 [Lingua Italica](/docs_i18n/README_it.md)/
 [Lingua Latina](/docs_i18n/README_la.md)/
 [Lingua Malaica](/docs_i18n/README_ms.md)/
-[Lingua Russica](/docs_i18n/README_ru.md)
+[Lingua Russica](/docs_i18n/README_ru.md)/
+[Lingua Vietnamica](/docs_i18n/README_vi.md)
 *Praeter linguam Iaponicam, omnes linguae sunt a machina translatae.
 
 ## VCClient

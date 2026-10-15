@@ -10,7 +10,8 @@
 [Ιταλικά](/docs_i18n/README_it.md)/
 [Λατινικά](/docs_i18n/README_la.md)/
 [Μαλαισιανά](/docs_i18n/README_ms.md)/
-[Ρωσικά](/docs_i18n/README_ru.md)
+[Ρωσικά](/docs_i18n/README_ru.md)/
+[Βιετναμέζικα](/docs_i18n/README_vi.md)
 *Οι γλώσσες εκτός των Ιαπωνικών είναι μεταφρασμένες αυτόματα.
 
 ## VCClient
