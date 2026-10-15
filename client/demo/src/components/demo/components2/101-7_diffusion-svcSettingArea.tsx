@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useAppState } from "../../../001_provider/001_AppStateProvider";
 import { DiffusionSVCModelSlot } from "@dannadori/voice-changer-client-js";
+import { t } from "../../../i18n";
 
 export type DiffusionSVCSettingAreaProps = {};
 
@@ -31,7 +32,7 @@ export const DiffusionSVCSettingArea = (_props: DiffusionSVCSettingAreaProps) =>
 
         const skipDiffRow = (
             <div className="character-area-control">
-                <div className="character-area-control-title">Boost</div>
+                <div className="character-area-control-title">{t("Boost")}</div>
                 <div className="character-area-control-field">
                     <div className="character-area-buttons">
                         <div
@@ -40,7 +41,7 @@ export const DiffusionSVCSettingArea = (_props: DiffusionSVCSettingAreaProps) =>
                                 serverSetting.updateServerSettings({ ...serverSetting.serverSetting, skipDiffusion: serverSetting.serverSetting.skipDiffusion == 0 ? 1 : 0 });
                             }}
                         >
-                            skip diff
+                            {t("skip diff")}
                         </div>
                     </div>
                 </div>
@@ -78,7 +79,7 @@ export const DiffusionSVCSettingArea = (_props: DiffusionSVCSettingAreaProps) =>
         );
         const speedUpRow = (
             <div className="character-area-control">
-                <div className="character-area-control-title">skip</div>
+                <div className="character-area-control-title">{t("skip")}</div>
                 <div className="character-area-control-field">
                     <div className="character-area-slider-control">
                         <span className="character-area-slider-control-kind"></span>

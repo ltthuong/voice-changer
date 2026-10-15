@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { useAppState } from "../../../001_provider/001_AppStateProvider";
 import { useGuiState } from "../001_GuiStateProvider";
 import { AUDIO_ELEMENT_FOR_SAMPLING_INPUT, AUDIO_ELEMENT_FOR_SAMPLING_OUTPUT } from "../../../const";
+import { t } from "../../../i18n";
 
 export type RecorderAreaProps = {};
 
@@ -50,7 +51,7 @@ export const RecorderArea = (_props: RecorderAreaProps) => {
         return (
             <>
                 <div className="config-sub-area-control">
-                    <div className="config-sub-area-control-title-long">ServerIO Analyzer</div>
+                    <div className="config-sub-area-control-title-long">{t("ServerIO Analyzer")}</div>
                 </div>
 
                 <div className="config-sub-area-control left-padding-1">
@@ -58,17 +59,17 @@ export const RecorderArea = (_props: RecorderAreaProps) => {
                     <div className="config-sub-area-control-field">
                         <div className="config-sub-area-buttons">
                             <div onClick={onServerIORecordStartClicked} className={startClassName}>
-                                start
+                                {t("start")}
                             </div>
                             <div onClick={onServerIORecordStopClicked} className={stopClassName}>
-                                stop
+                                {t("stop")}
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="config-sub-area-control left-padding-1">
-                    <div className="config-sub-area-control-title">output</div>
+                    <div className="config-sub-area-control-title">{t("output")}</div>
                     <div className="config-sub-area-control-field">
                         <div className="config-sub-area-control-field-auido-io">
                             <select
@@ -108,7 +109,7 @@ export const RecorderArea = (_props: RecorderAreaProps) => {
                 </div>
 
                 <div className="config-sub-area-control left-padding-1">
-                    <div className="config-sub-area-control-title">in</div>
+                    <div className="config-sub-area-control-title">{t("in")}</div>
                     <div className="config-sub-area-control-field">
                         <div className="config-sub-area-control-field-wav-file">
                             <div className="config-sub-area-control-field-wav-file-audio-container">
@@ -118,7 +119,7 @@ export const RecorderArea = (_props: RecorderAreaProps) => {
                     </div>
                 </div>
                 <div className="config-sub-area-control left-padding-1">
-                    <div className="config-sub-area-control-title">out</div>
+                    <div className="config-sub-area-control-title">{t("out")}</div>
                     <div className="config-sub-area-control-field">
                         <div className="config-sub-area-control-field-wav-file">
                             <div className="config-sub-area-control-field-wav-file-audio-container">

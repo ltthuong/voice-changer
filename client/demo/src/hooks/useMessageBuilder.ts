@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import { UI_LANG } from "../i18n"
 
 export type Message = {
     file: string,
@@ -22,11 +23,8 @@ export const useMessageBuilder = (): MessageBuilderStateAndMethod => {
         }
     }
     const getMessage = (file: string, id: string) => {
-        let lang = window.navigator.language
-        if (lang != "ja") {
-            lang = "en"
-        }
-        return messagesRef.current.find(x => { return x.file == file && x.id == id })?.message[lang] || "unknwon message"
+        const message = messagesRef.current.find(x => { return x.file == file && x.id == id })?.message
+        return message?.[UI_LANG] || message?.["en"] || "unknwon message"
     }
     return {
         setMessage,

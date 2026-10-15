@@ -4,6 +4,7 @@ import React, { useMemo } from "react";
 import { useGuiState } from "./001_GuiStateProvider";
 import { isDesktopApp } from "../../const";
 import { useMessageBuilder } from "../../hooks/useMessageBuilder";
+import { t } from "../../i18n";
 
 export const ShowLicenseDialog = () => {
     const guiState = useGuiState();
@@ -13,8 +14,9 @@ export const ShowLicenseDialog = () => {
         messageBuilderState.setMessage(__filename, "nsf_hifigan1", {
             ja: "Diffusion SVC, DDSP SVCはvocodeerはDiffSinger Community Vocodersを使用しています。次のリンクからライセンスをご確認ください。",
             en: "Diffusion SVC and DDSP SVC uses DiffSinger Community Vocoders. Please check the license from the following link.",
+            vi: "Diffusion SVC và DDSP SVC dùng vocoder DiffSinger Community Vocoders. Vui lòng xem giấy phép tại liên kết sau.",
         });
-        messageBuilderState.setMessage(__filename, "nsf_hifigan2", { ja: "別のモデルを使用する場合はpretrain\\nsf_hifiganに設置してください。", en: "Please place it on pretrain\\nsf_hifigan if you are using a different model." });
+        messageBuilderState.setMessage(__filename, "nsf_hifigan2", { ja: "別のモデルを使用する場合はpretrain\\nsf_hifiganに設置してください。", en: "Please place it on pretrain\\nsf_hifigan if you are using a different model.", vi: "Nếu dùng mô hình khác, hãy đặt nó vào pretrain\\nsf_hifigan." });
     }, []);
 
     const hifiGanLink = useMemo(() => {
@@ -27,11 +29,11 @@ export const ShowLicenseDialog = () => {
                     window.electronAPI.openBrowser("https://openvpi.github.io/vocoders/");
                 }}
             >
-                license
+                {t("license")}
             </span>
         ) : (
             <a className="link" href="https://openvpi.github.io/vocoders/" target="_blank" rel="noopener noreferrer">
-                license
+                {t("license")}
             </a>
         );
     }, []);
@@ -55,7 +57,7 @@ export const ShowLicenseDialog = () => {
                             guiState.stateControls.showLicenseCheckbox.updateState(false);
                         }}
                     >
-                        close
+                        {t("close")}
                     </div>
                 </div>
                 <div className="body-item-text"></div>
@@ -64,7 +66,7 @@ export const ShowLicenseDialog = () => {
 
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">Input Dialog</div>
+                <div className="dialog-title">{t("Input Dialog")}</div>
                 <div className="dialog-content">
                     <div className="body-row">{hifiganMessage}</div>
                     {buttonsRow}

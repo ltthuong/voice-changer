@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useAppState } from "../../../001_provider/001_AppStateProvider";
 import { useAppRoot } from "../../../001_provider/001_AppRootProvider";
+import { t } from "../../../i18n";
 
 export type ConvertProps = {
     inputChunkNums: number[];
@@ -104,7 +105,7 @@ export const ConvertArea = (props: ConvertProps) => {
                                 </div>
                                 <div className="config-sub-area-control">
                                     <span className="config-sub-area-button-text-small">
-                                        <a href="https://github.com/w-okada/voice-changer/issues/410">more info</a>
+                                        <a href="https://github.com/w-okada/voice-changer/issues/410">{t("more info")}</a>
                                     </span>
                                 </div>
                             </div>

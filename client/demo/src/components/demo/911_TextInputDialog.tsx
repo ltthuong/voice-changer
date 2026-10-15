@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { useGuiState } from "./001_GuiStateProvider";
+import { t } from "../../i18n";
 
 
 export const TextInputDialog = () => {
@@ -20,7 +21,7 @@ export const TextInputDialog = () => {
                             guiState.setTextInputResolve(null)
                         }
                         guiState.stateControls.showTextInputCheckbox.updateState(false)
-                    }} >ok</div>
+                    }} >{t("ok")}</div>
                     <div className="body-button" onClick={() => {
                         const inputText = document.getElementById("input-text") as HTMLInputElement
                         inputText.value = ""
@@ -29,20 +30,20 @@ export const TextInputDialog = () => {
                             guiState.setTextInputResolve(null)
                         }
                         guiState.stateControls.showTextInputCheckbox.updateState(false)
-                    }} >cancel</div>
+                    }} >{t("cancel")}</div>
                 </div>
                 <div className="body-item-text"></div>
             </div>
         )
         const textInput = (
             <div className="input-text-container">
-                <div>Input Text: </div>
+                <div>{t("Input Text:")} </div>
                 <input id="input-text" type="text" />
             </div>
         )
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">Input Dialog</div>
+                <div className="dialog-title">{t("Input Dialog")}</div>
                 <div className="dialog-content">
                     {textInput}
                     {buttonsRow}

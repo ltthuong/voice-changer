@@ -3,6 +3,7 @@ import { useAppState } from "../../../001_provider/001_AppStateProvider";
 import { useGuiState } from "../001_GuiStateProvider";
 import { useMessageBuilder } from "../../../hooks/useMessageBuilder";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { t } from "../../../i18n";
 
 export type ModelSlotAreaProps = {};
 
@@ -19,7 +20,7 @@ export const ModelSlotArea = (_props: ModelSlotAreaProps) => {
     const [sortType, setSortType] = useState<SortTypes>("slot");
 
     useMemo(() => {
-        messageBuilderState.setMessage(__filename, "edit", { ja: "編集", en: "edit" });
+        messageBuilderState.setMessage(__filename, "edit", { ja: "編集", en: "edit", vi: "sửa" });
     }, []);
 
     const modelTiles = useMemo(() => {
@@ -53,7 +54,7 @@ export const ModelSlotArea = (_props: ModelSlotAreaProps) => {
                         </>
                     ) : (
                         <>
-                            <div className="model-slot-tile-icon-no-entry">no image</div>
+                            <div className="model-slot-tile-icon-no-entry">{t("no image")}</div>
                             <div className="model-slot-tile-vctype">{x.voiceChangerType}</div>
                         </>
                     );

@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useGuiState } from "../001_GuiStateProvider";
 import { useAppState } from "../../../001_provider/001_AppStateProvider";
+import { t } from "../../../i18n";
 
 export type MoreActionAreaProps = {};
 
@@ -24,20 +25,20 @@ export const MoreActionArea = (_props: MoreActionAreaProps) => {
         return (
             <>
                 <div className="config-sub-area-control left-padding-1">
-                    <div className="config-sub-area-control-title">more...</div>
+                    <div className="config-sub-area-control-title">{t("more...")}</div>
                     <div className="config-sub-area-control-field config-sub-area-control-field-long">
                         <div className="config-sub-area-buttons">
                             <div onClick={onOpenMergeLabClicked} className="config-sub-area-button">
-                                Merge Lab
+                                {t("Merge Lab")}
                             </div>
                             <div onClick={onOpenAdvancedSettingClicked} className="config-sub-area-button">
-                                Advanced Setting
+                                {t("Advanced Setting")}
                             </div>
                             <div onClick={onOpenGetServerInformationClicked} className="config-sub-area-button">
-                                Server Info
+                                {t("Server Info")}
                             </div>
                             <div onClick={onOpenGetClientInformationClicked} className="config-sub-area-button">
-                                Client Info
+                                {t("Client Info")}
                             </div>
                         </div>
                     </div>

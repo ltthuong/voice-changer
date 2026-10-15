@@ -4,6 +4,7 @@ import { fileSelectorAsDataURL, useIndexedDB } from "@dannadori/voice-changer-cl
 import { useGuiState } from "../001_GuiStateProvider";
 import { AUDIO_ELEMENT_FOR_PLAY_MONITOR, AUDIO_ELEMENT_FOR_PLAY_RESULT, AUDIO_ELEMENT_FOR_TEST_CONVERTED, AUDIO_ELEMENT_FOR_TEST_CONVERTED_ECHOBACK, INDEXEDDB_KEY_AUDIO_MONITR, INDEXEDDB_KEY_AUDIO_OUTPUT } from "../../../const";
 import { isDesktopApp } from "../../../const";
+import { t } from "../../../i18n";
 
 export type DeviceAreaProps = {};
 
@@ -28,7 +29,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                     <div className="config-sub-area-control-field">
                         <div className="config-sub-area-buttons">
                             <div onClick={reloadDeviceInfo} className="config-sub-area-button">
-                                reload
+                                {t("reload")}
                             </div>
                         </div>
                     </div>
@@ -41,7 +42,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
 
         const onDeviceModeChanged = (val: number) => {
             if (isConverting) {
-                alert("cannot change mode when voice conversion is enabled");
+                alert(t("cannot change mode when voice conversion is enabled"));
                 return;
             }
             serverSetting.updateServerSettings({ ...serverSetting.serverSetting, enableServerAudio: val });
@@ -62,7 +63,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                                     onDeviceModeChanged(0);
                                 }}
                             />{" "}
-                            <label htmlFor="client-device">client</label>
+                            <label htmlFor="client-device">{t("client")}</label>
                         </div>
                         <div className="config-sub-area-noise-checkbox-container">
                             <input
@@ -75,12 +76,12 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                                     onDeviceModeChanged(1);
                                 }}
                             />
-                            <label htmlFor="server-device">server</label>
+                            <label htmlFor="server-device">{t("server")}</label>
                         </div>
 
                         <div className="config-sub-area-buttons">
                             <div onClick={reloadDeviceInfo} className="config-sub-area-button">
-                                reload
+                                {t("reload")}
                             </div>
                         </div>
                     </div>
@@ -112,7 +113,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
 
         return (
             <div className="config-sub-area-control">
-                <div className="config-sub-area-control-title left-padding-1">input</div>
+                <div className="config-sub-area-control-title left-padding-1">{t("input")}</div>
                 <div className="config-sub-area-control-field">
                     <select
                         className="body-select"
@@ -184,7 +185,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
 
         return (
             <div className="config-sub-area-control">
-                <div className="config-sub-area-control-title left-padding-1">input</div>
+                <div className="config-sub-area-control-title left-padding-1">{t("input")}</div>
                 <div className="config-sub-area-control-field">
                     <div className="config-sub-area-control-field-auido-io">
                         <select
@@ -197,7 +198,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                             }}
                         >
                             <option value="ALL" key="ALL">
-                                ALL
+                                {t("ALL")}
                             </option>
                             {hostAPIOptions}
                         </select>
@@ -210,7 +211,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                         >
                             {filteredDevice}
                             <option value="-1" key="none">
-                                none
+                                {t("none")}
                             </option>
                         </select>
                     </div>
@@ -289,7 +290,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                                 setFileInputEchoback(!fileInputEchoback);
                             }}
                         >
-                            echo{fileInputEchoback}
+                            {t("echo")}{fileInputEchoback}
                         </div>
                     </div>
                 </div>
@@ -378,7 +379,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                                 onSelectScreenClicked();
                             }}
                         >
-                            capture
+                            {t("capture")}
                         </div>
                     </div>
                 </div>
@@ -458,7 +459,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
 
         return (
             <div className="config-sub-area-control">
-                <div className="config-sub-area-control-title left-padding-1">output</div>
+                <div className="config-sub-area-control-title left-padding-1">{t("output")}</div>
                 <div className="config-sub-area-control-field">
                     <select
                         className="body-select"
@@ -526,7 +527,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
 
         return (
             <div className="config-sub-area-control">
-                <div className="config-sub-area-control-title left-padding-1">output</div>
+                <div className="config-sub-area-control-title left-padding-1">{t("output")}</div>
                 <div className="config-sub-area-control-field">
                     <div className="config-sub-area-control-field-auido-io">
                         <select
@@ -539,7 +540,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                             }}
                         >
                             <option value="ALL" key="ALL">
-                                ALL
+                                {t("ALL")}
                             </option>
                             {hostAPIOptions}
                         </select>
@@ -552,7 +553,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                         >
                             {filteredDevice}
                             <option value="-1" key="none">
-                                none
+                                {t("none")}
                             </option>
                         </select>
                     </div>
@@ -584,10 +585,10 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                 <div className="config-sub-area-control-field">
                     <div className="config-sub-area-buttons">
                         <div onClick={onOutputRecordStartClicked} className={startClassName}>
-                            start
+                            {t("start")}
                         </div>
                         <div onClick={onOutputRecordStopClicked} className={stopClassName}>
-                            stop
+                            {t("stop")}
                         </div>
                     </div>
                 </div>
@@ -688,7 +689,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
 
         return (
             <div className="config-sub-area-control">
-                <div className="config-sub-area-control-title left-padding-1">monitor</div>
+                <div className="config-sub-area-control-title left-padding-1">{t("monitor")}</div>
                 <div className="config-sub-area-control-field">
                     <select
                         className="body-select"
@@ -749,7 +750,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
             .filter((x) => x != null);
         filteredDevice.unshift(
             <option value={-1} key={-1}>
-                none
+                {t("none")}
             </option>,
         );
 
@@ -761,7 +762,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
 
         return (
             <div className="config-sub-area-control">
-                <div className="config-sub-area-control-title left-padding-1">monitor</div>
+                <div className="config-sub-area-control-title left-padding-1">{t("monitor")}</div>
                 <div className="config-sub-area-control-field">
                     <div className="config-sub-area-control-field-auido-io">
                         <select
@@ -774,7 +775,7 @@ export const DeviceArea = (_props: DeviceAreaProps) => {
                             }}
                         >
                             <option value="ALL" key="ALL">
-                                ALL
+                                {t("ALL")}
                             </option>
                             {hostAPIOptions}
                         </select>

@@ -6,6 +6,7 @@ import { useMessageBuilder } from "../../hooks/useMessageBuilder";
 import { ModelSlotManagerDialogScreen } from "./904_ModelSlotManagerDialog";
 import { checkExtention, trimfileName } from "../../utils/utils";
 import { MODEL_ICON_BLANK_URL } from "../../const";
+import { t } from "../../i18n";
 
 export type MainScreenProps = {
     screen: ModelSlotManagerDialogScreen;
@@ -20,14 +21,14 @@ export const MainScreen = (props: MainScreenProps) => {
     const guiState = useGuiState();
     const messageBuilderState = useMessageBuilder();
     useMemo(() => {
-        messageBuilderState.setMessage(__filename, "change_icon", { ja: "アイコン変更", en: "change icon" });
-        messageBuilderState.setMessage(__filename, "rename", { ja: "リネーム", en: "rename" });
-        messageBuilderState.setMessage(__filename, "download", { ja: "ダウンロード", en: "download" });
-        messageBuilderState.setMessage(__filename, "terms_of_use", { ja: "利用規約", en: "terms of use" });
-        messageBuilderState.setMessage(__filename, "sample", { ja: "サンプル", en: "DL sample" });
-        messageBuilderState.setMessage(__filename, "upload", { ja: "アップロード", en: "upload" });
-        messageBuilderState.setMessage(__filename, "edit", { ja: "編集", en: "edit" });
-        messageBuilderState.setMessage(__filename, "close", { ja: "閉じる", en: "close" });
+        messageBuilderState.setMessage(__filename, "change_icon", { ja: "アイコン変更", en: "change icon", vi: "đổi biểu tượng" });
+        messageBuilderState.setMessage(__filename, "rename", { ja: "リネーム", en: "rename", vi: "đổi tên" });
+        messageBuilderState.setMessage(__filename, "download", { ja: "ダウンロード", en: "download", vi: "tải về" });
+        messageBuilderState.setMessage(__filename, "terms_of_use", { ja: "利用規約", en: "terms of use", vi: "điều khoản sử dụng" });
+        messageBuilderState.setMessage(__filename, "sample", { ja: "サンプル", en: "DL sample", vi: "tải mẫu" });
+        messageBuilderState.setMessage(__filename, "upload", { ja: "アップロード", en: "upload", vi: "tải lên" });
+        messageBuilderState.setMessage(__filename, "edit", { ja: "編集", en: "edit", vi: "sửa" });
+        messageBuilderState.setMessage(__filename, "close", { ja: "閉じる", en: "close", vi: "đóng" });
     }, []);
 
     const screen = useMemo(() => {
@@ -45,7 +46,7 @@ export const MainScreen = (props: MainScreenProps) => {
 
             const file = await fileSelector("");
             if (checkExtention(file.name, ["png", "jpg", "jpeg", "gif"]) == false) {
-                alert(`サムネイルの拡張子は".png", ".jpg", ".jpeg", ".gif"である必要があります。`);
+                alert(t('サムネイルの拡張子は".png", ".jpg", ".jpeg", ".gif"である必要があります。'));
                 return;
             }
             await serverSetting.uploadAssets(index, "iconFile", file);
@@ -155,7 +156,7 @@ export const MainScreen = (props: MainScreenProps) => {
                 const fileValueClass = filePath.length > 0 ? "model-slot-detail-row-value-download  tooltip" : "model-slot-detail-row-value";
                 return (
                     <div key={`${title}`} className="model-slot-detail-row">
-                        <div className="model-slot-detail-row-label">{title}:</div>
+                        <div className="model-slot-detail-row-label">{t(title)}:</div>
                         <div
                             className={fileValueClass}
                             onClick={() => {
@@ -173,7 +174,7 @@ export const MainScreen = (props: MainScreenProps) => {
             const generateInfoRow = (info: string) => {
                 return (
                     <div className="model-slot-detail-row">
-                        <div className="model-slot-detail-row-label">info: </div>
+                        <div className="model-slot-detail-row-label">{t("info:")} </div>
                         <div className="model-slot-detail-row-value">{info}</div>
                         <div className=""></div>
                     </div>
@@ -272,7 +273,7 @@ export const MainScreen = (props: MainScreenProps) => {
 
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">Model Slot Configuration</div>
+                <div className="dialog-title">{t("Model Slot Configuration")}</div>
                 <div className="dialog-fixed-size-content">
                     <div className="model-slot-container">{slotRow}</div>
                     {closeButtonRow}

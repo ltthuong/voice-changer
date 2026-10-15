@@ -3,6 +3,7 @@ import { useAppState } from "../../001_provider/001_AppStateProvider";
 import { DiffusionSVCSampleModel, ModelUploadSetting, RVCSampleModel, VoiceChangerType } from "@dannadori/voice-changer-client-js";
 import { useMessageBuilder } from "../../hooks/useMessageBuilder";
 import { ModelSlotManagerDialogScreen } from "./904_ModelSlotManagerDialog";
+import { t } from "../../i18n";
 
 export type SampleDownloaderScreenProps = {
     screen: ModelSlotManagerDialogScreen;
@@ -16,11 +17,11 @@ export const SampleDownloaderScreen = (props: SampleDownloaderScreenProps) => {
     const [lang, setLang] = useState<string>("All");
     const messageBuilderState = useMessageBuilder();
     useMemo(() => {
-        messageBuilderState.setMessage(__filename, "header_message", { ja: "サンプルをダウンロードしてください. 対象：", en: "Download Sample for" });
-        messageBuilderState.setMessage(__filename, "lang", { ja: "言語", en: "Lang" });
-        messageBuilderState.setMessage(__filename, "back", { ja: "戻る", en: "back" });
-        messageBuilderState.setMessage(__filename, "terms_of_use", { ja: "利用規約", en: "terms of use" });
-        messageBuilderState.setMessage(__filename, "download", { ja: "ダウンロード", en: "download" });
+        messageBuilderState.setMessage(__filename, "header_message", { ja: "サンプルをダウンロードしてください. 対象：", en: "Download Sample for", vi: "Tải mô hình mẫu cho" });
+        messageBuilderState.setMessage(__filename, "lang", { ja: "言語", en: "Lang", vi: "Ngôn ngữ" });
+        messageBuilderState.setMessage(__filename, "back", { ja: "戻る", en: "back", vi: "quay lại" });
+        messageBuilderState.setMessage(__filename, "terms_of_use", { ja: "利用規約", en: "terms of use", vi: "điều khoản sử dụng" });
+        messageBuilderState.setMessage(__filename, "download", { ja: "ダウンロード", en: "download", vi: "tải về" });
     }, []);
 
     /////////////////////////////////////////
@@ -94,17 +95,17 @@ export const SampleDownloaderScreen = (props: SampleDownloaderScreenProps) => {
                         <img src={x.icon} className="model-slot-icon"></img>
                         <div className="model-slot-detail">
                             <div className="model-slot-detail-row">
-                                <div className="model-slot-detail-row-label">name:</div>
+                                <div className="model-slot-detail-row-label">{t("name:")}</div>
                                 <div className="model-slot-detail-row-value">{x.name}</div>
                                 <div className="">{termOfUseUrlLink}</div>
                             </div>
                             <div className="model-slot-detail-row">
-                                <div className="model-slot-detail-row-label">VC Type: </div>
+                                <div className="model-slot-detail-row-label">{t("VC Type:")} </div>
                                 <div className="model-slot-detail-row-value">{x.voiceChangerType}</div>
                                 <div className=""></div>
                             </div>
                             <div className="model-slot-detail-row">
-                                <div className="model-slot-detail-row-label">info: </div>
+                                <div className="model-slot-detail-row-label">{t("info:")} </div>
                                 <div className="model-slot-detail-row-value">{info}</div>
                                 <div className=""></div>
                             </div>
@@ -131,7 +132,7 @@ export const SampleDownloaderScreen = (props: SampleDownloaderScreenProps) => {
 
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">Sample Downloader</div>
+                <div className="dialog-title">{t("Sample Downloader")}</div>
                 <div className="dialog-fixed-size-content">
                     <div className="model-slot-header">
                         {messageBuilderState.getMessage(__filename, "header_message")} Slot[{props.targetIndex}]

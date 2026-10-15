@@ -4,6 +4,7 @@ import { useAppRoot } from "../../../001_provider/001_AppRootProvider";
 import { useAppState } from "../../../001_provider/001_AppStateProvider";
 import { useIndexedDB } from "@dannadori/voice-changer-client-js";
 import { useMessageBuilder } from "../../../hooks/useMessageBuilder";
+import { t } from "../../../i18n";
 
 export type HeaderAreaProps = {
     mainTitle: string;
@@ -18,10 +19,10 @@ export const HeaderArea = (props: HeaderAreaProps) => {
     const { removeItem, removeDB } = useIndexedDB({ clientType: null });
 
     useMemo(() => {
-        messageBuilderState.setMessage(__filename, "github", { ja: "github", en: "github" });
-        messageBuilderState.setMessage(__filename, "manual", { ja: "マニュアル", en: "manual" });
-        messageBuilderState.setMessage(__filename, "screenCapture", { ja: "録画ツール", en: "Record Screen" });
-        messageBuilderState.setMessage(__filename, "support", { ja: "支援", en: "Donation" });
+        messageBuilderState.setMessage(__filename, "github", { ja: "github", en: "github", vi: "github" });
+        messageBuilderState.setMessage(__filename, "manual", { ja: "マニュアル", en: "manual", vi: "hướng dẫn" });
+        messageBuilderState.setMessage(__filename, "screenCapture", { ja: "録画ツール", en: "Record Screen", vi: "Ghi màn hình" });
+        messageBuilderState.setMessage(__filename, "support", { ja: "支援", en: "Donation", vi: "Ủng hộ" });
     }, []);
 
     const githubLink = useMemo(() => {
@@ -141,7 +142,7 @@ export const HeaderArea = (props: HeaderAreaProps) => {
                     </span>
                     <span className="belongings">
                         <div className="belongings-button" onClick={onClearSettingClicked}>
-                            clear setting
+                            {t("clear setting")}
                         </div>
                         {/* <div className="belongings-button" onClick={onReloadClicked}>reload</div>
                         <div className="belongings-button" onClick={onReselectVCClicked}>select vc</div> */}

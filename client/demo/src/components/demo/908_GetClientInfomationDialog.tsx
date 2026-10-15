@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { useGuiState } from "./001_GuiStateProvider";
 import { useAppState } from "../../001_provider/001_AppStateProvider";
 import { useAppRoot } from "../../001_provider/001_AppRootProvider";
+import { t } from "../../i18n";
 
 export const GetClientInfomationDialog = () => {
     const guiState = useGuiState();
@@ -18,7 +19,7 @@ export const GetClientInfomationDialog = () => {
                             guiState.stateControls.showGetClientInformationCheckbox.updateState(false);
                         }}
                     >
-                        close
+                        {t("close")}
                     </div>
                 </div>
                 <div className="body-item-text"></div>
@@ -49,7 +50,7 @@ export const GetClientInfomationDialog = () => {
         );
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">Client Information</div>
+                <div className="dialog-title">{t("Client Information")}</div>
                 <div className="dialog-content">
                     {content}
                     {closeButtonRow}

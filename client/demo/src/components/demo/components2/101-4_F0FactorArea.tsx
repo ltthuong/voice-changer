@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useAppState } from "../../../001_provider/001_AppStateProvider";
 import { MMVCv15ModelSlot } from "@dannadori/voice-changer-client-js";
+import { t } from "../../../i18n";
 
 export type SpeakerAreaProps = {};
 
@@ -57,7 +58,7 @@ export const F0FactorArea = (_props: SpeakerAreaProps) => {
                     <div className="character-area-control-title"></div>
                     <div className="character-area-control-field">
                         <div className="character-area-slider-control">
-                            <span className="character-area-slider-control-text">recommend:</span>
+                            <span className="character-area-slider-control-text">{t("recommend:")}</span>
                             <span className="character-area-slider-control-text">{recommendF0}</span>
                         </div>
                     </div>

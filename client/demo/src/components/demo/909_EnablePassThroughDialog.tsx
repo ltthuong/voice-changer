@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { useGuiState } from "./001_GuiStateProvider";
 import { useAppState } from "../../001_provider/001_AppStateProvider";
 import { useAppRoot } from "../../001_provider/001_AppRootProvider";
+import { t } from "../../i18n";
 
 export const EnablePassThroughDialog = () => {
     const guiState = useGuiState();
@@ -28,7 +29,7 @@ export const EnablePassThroughDialog = () => {
                             guiState.stateControls.showEnablePassThroughDialogCheckbox.updateState(false);
                         }}
                     >
-                        Cancel
+                        {t("Cancel")}
                     </div>
                 </div>
                 <div className="body-item-text"></div>
@@ -38,7 +39,7 @@ export const EnablePassThroughDialog = () => {
         console.log("AUDIO_CONTEXT", audioContextState.audioContext);
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">Enable Pass Through</div>
+                <div className="dialog-title">{t("Enable Pass Through")}</div>
                 <div className="dialog-content">{buttonRow}</div>
             </div>
         );

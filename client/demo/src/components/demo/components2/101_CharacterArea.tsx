@@ -13,6 +13,7 @@ import { DiffusionSVCSettingArea } from "./101-7_diffusion-svcSettingArea";
 import { Portrait } from "./101-0_Portrait";
 import { useAppRoot } from "../../../001_provider/001_AppRootProvider";
 import { WebEditionSettingArea } from "./101-8_web-editionSettingArea";
+import { t } from "../../../i18n";
 
 export type CharacterAreaProps = {};
 
@@ -24,9 +25,9 @@ export const CharacterArea = (_props: CharacterAreaProps) => {
     const webEdition = appGuiSettingState.edition.indexOf("web") >= 0;
     const { beatriceJVSSpeakerId } = useGuiState();
     useMemo(() => {
-        messageBuilderState.setMessage(__filename, "export_to_onnx", { ja: "onnx出力", en: "export to onnx" });
-        messageBuilderState.setMessage(__filename, "save_default", { ja: "設定保存", en: "save setting" });
-        messageBuilderState.setMessage(__filename, "alert_onnx", { ja: "ボイチェン中はonnx出力できません", en: "cannot export onnx when voice conversion is enabled" });
+        messageBuilderState.setMessage(__filename, "export_to_onnx", { ja: "onnx出力", en: "export to onnx", vi: "xuất ONNX" });
+        messageBuilderState.setMessage(__filename, "save_default", { ja: "設定保存", en: "save setting", vi: "lưu cài đặt" });
+        messageBuilderState.setMessage(__filename, "alert_onnx", { ja: "ボイチェン中はonnx出力できません", en: "cannot export onnx when voice conversion is enabled", vi: "Không thể xuất ONNX khi đang đổi giọng." });
     }, []);
 
     const selected = useMemo(() => {
@@ -58,7 +59,7 @@ export const CharacterArea = (_props: CharacterAreaProps) => {
         }
         return (
             <div className="character-area-control">
-                <div className="character-area-control-title">Name:</div>
+                <div className="character-area-control-title">{t("Name:")}</div>
                 <div className="character-area-control-field">
                     <div className="character-area-text">
                         {selected.name} {selected.slotIndex == "Beatrice-JVS" ? `speaker:${beatriceJVSSpeakerId}` : ""}
@@ -119,11 +120,11 @@ export const CharacterArea = (_props: CharacterAreaProps) => {
             if (webInfoState.webModelLoadingState == "none" || webInfoState.webModelLoadingState == "loading") {
                 return (
                     <div className="character-area-control">
-                        <div className="character-area-control-title">wait...</div>
+                        <div className="character-area-control-title">{t("wait...")}</div>
                         <div className="character-area-control-field">
                             <div className="character-area-text blink">{webInfoState.webModelLoadingState}..</div>
                             <div className="character-area-text">
-                                pre:{Math.floor(webInfoState.progressLoadPreprocess * 100)}%, model: {Math.floor(webInfoState.progressLoadVCModel * 100)}%
+                                {t("pre:")}{Math.floor(webInfoState.progressLoadPreprocess * 100)}{t("%, model:")} {Math.floor(webInfoState.progressLoadVCModel * 100)}%
                             </div>
                         </div>
                     </div>
@@ -131,10 +132,10 @@ export const CharacterArea = (_props: CharacterAreaProps) => {
             } else if (webInfoState.webModelLoadingState == "warmup") {
                 return (
                     <div className="character-area-control">
-                        <div className="character-area-control-title">wait...</div>
+                        <div className="character-area-control-title">{t("wait...")}</div>
                         <div className="character-area-control-field">
                             <div className="character-area-text blink">{webInfoState.webModelLoadingState}..</div>
-                            <div className="character-area-text">warm up:{Math.floor(webInfoState.progressWarmup * 100)}%</div>
+                            <div className="character-area-text">{t("warm up:")}{Math.floor(webInfoState.progressWarmup * 100)}%</div>
                         </div>
                     </div>
                 );
@@ -147,10 +148,10 @@ export const CharacterArea = (_props: CharacterAreaProps) => {
                     <div className="character-area-control">
                         <div className="character-area-control-buttons">
                             <div onClick={onStartClicked} className={startClassName}>
-                                start
+                                {t("start")}
                             </div>
                             <div onClick={onStopClicked} className={stopClassName}>
-                                stop
+                                {t("stop")}
                             </div>
                         </div>
                     </div>
@@ -160,10 +161,10 @@ export const CharacterArea = (_props: CharacterAreaProps) => {
                     <div className="character-area-control">
                         <div className="character-area-control-buttons">
                             <div onClick={onStartClicked} className={startClassName}>
-                                start
+                                {t("start")}
                             </div>
                             <div onClick={onStopClicked} className={stopClassName}>
-                                stop
+                                {t("stop")}
                             </div>
 
                             <div onClick={onPassThroughClicked} className={passThruClassName}>
@@ -202,7 +203,7 @@ export const CharacterArea = (_props: CharacterAreaProps) => {
                 <div className="character-area-control-title">GAIN:</div>
                 <div className="character-area-control-field">
                     <div className="character-area-slider-control">
-                        <span className="character-area-slider-control-kind">in</span>
+                        <span className="character-area-slider-control-kind">{t("in")}</span>
                         <span className="character-area-slider-control-slider">
                             <input
                                 type="range"
@@ -219,7 +220,7 @@ export const CharacterArea = (_props: CharacterAreaProps) => {
                     </div>
 
                     <div className="character-area-slider-control">
-                        <span className="character-area-slider-control-kind">out</span>
+                        <span className="character-area-slider-control-kind">{t("out")}</span>
                         <span className="character-area-slider-control-slider">
                             <input
                                 type="range"

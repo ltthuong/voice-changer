@@ -39,6 +39,7 @@ export const AppStateProvider = ({ children }: Props) => {
         messageBuilderState.setMessage(__filename, "ioError", {
             ja: "エラーが頻発しています。対象としているフレームワークのモデルがロードされているか確認してください。",
             en: "Frequent errors occur. Please check if the model of the framework being targeted is loaded.",
+            vi: "Lỗi xảy ra liên tục. Hãy kiểm tra xem mô hình của framework đang dùng đã được tải chưa.",
         });
     }, []);
 

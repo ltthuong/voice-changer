@@ -4,6 +4,7 @@ import { ModelFileKind, ModelUploadSetting, VoiceChangerType, fileSelector } fro
 import { useMessageBuilder } from "../../hooks/useMessageBuilder";
 import { ModelSlotManagerDialogScreen } from "./904_ModelSlotManagerDialog";
 import { checkExtention, trimfileName } from "../../utils/utils";
+import { t } from "../../i18n";
 
 export type FileUploaderScreenProps = {
     screen: ModelSlotManagerDialogScreen;
@@ -19,18 +20,20 @@ export const FileUploaderScreen = (props: FileUploaderScreenProps) => {
     const messageBuilderState = useMessageBuilder();
 
     useMemo(() => {
-        messageBuilderState.setMessage(__filename, "header_message", { ja: "ファイルをアップロードしてください. 対象：", en: "Upload Files for " });
-        messageBuilderState.setMessage(__filename, "back", { ja: "戻る", en: "back" });
-        messageBuilderState.setMessage(__filename, "select", { ja: "ファイル選択", en: "select file" });
-        messageBuilderState.setMessage(__filename, "upload", { ja: "アップロード", en: "upload" });
-        messageBuilderState.setMessage(__filename, "uploading", { ja: "アップロード中", en: "uploading" });
+        messageBuilderState.setMessage(__filename, "header_message", { ja: "ファイルをアップロードしてください. 対象：", en: "Upload Files for ", vi: "Tải tệp lên cho " });
+        messageBuilderState.setMessage(__filename, "back", { ja: "戻る", en: "back", vi: "quay lại" });
+        messageBuilderState.setMessage(__filename, "select", { ja: "ファイル選択", en: "select file", vi: "chọn tệp" });
+        messageBuilderState.setMessage(__filename, "upload", { ja: "アップロード", en: "upload", vi: "tải lên" });
+        messageBuilderState.setMessage(__filename, "uploading", { ja: "アップロード中", en: "uploading", vi: "đang tải lên" });
         messageBuilderState.setMessage(__filename, "alert-model-ext", {
             ja: "ファイルの拡張子は次のモノである必要があります。",
             en: "extension of file should be the following.",
+            vi: "Đuôi tệp phải là một trong các loại sau.",
         });
         messageBuilderState.setMessage(__filename, "alert-model-file", {
             ja: "ファイルが選択されていません",
             en: "file is not selected.",
+            vi: "Chưa chọn tệp.",
         });
     }, []);
 
@@ -141,7 +144,7 @@ export const FileUploaderScreen = (props: FileUploaderScreenProps) => {
             const selectedFilename = selectedFile?.file.name || "";
             return (
                 <div key={`${title}`} className="file-uploader-file-select-row">
-                    <div className="file-uploader-file-select-row-label">{title}:</div>
+                    <div className="file-uploader-file-select-row-label">{t(title)}:</div>
                     <div className="file-uploader-file-select-row-value">{trimfileName(selectedFilename, 30)}</div>
                     <div
                         className="file-uploader-file-select-row-button"
@@ -206,7 +209,7 @@ export const FileUploaderScreen = (props: FileUploaderScreenProps) => {
         const buttonLabel = serverSetting.uploadProgress == 0 ? messageBuilderState.getMessage(__filename, "upload") : messageBuilderState.getMessage(__filename, "uploading") + `(${serverSetting.uploadProgress.toFixed(1)}%)`;
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">File Uploader</div>
+                <div className="dialog-title">{t("File Uploader")}</div>
                 <div className="dialog-fixed-size-content">
                     <div className="file-uploader-header">
                         {messageBuilderState.getMessage(__filename, "header_message")} Slot[{props.targetIndex}]
@@ -220,7 +223,7 @@ export const FileUploaderScreen = (props: FileUploaderScreenProps) => {
                         </span>
                     </div>
                     <div className="file-uploader-voice-changer-select">
-                        VoiceChangerType:
+                        {t("VoiceChangerType:")}
                         <select
                             value={voiceChangerType}
                             onChange={(e) => {

@@ -6,9 +6,9 @@ export const WaitingDialog = () => {
     // const guiState = useGuiState()
     const messageBuilderState = useMessageBuilder()
     useMemo(() => {
-        messageBuilderState.setMessage(__filename, "wait", { "ja": "しばらくお待ちください", "en": "please wait..." })
-        messageBuilderState.setMessage(__filename, "wait_sub1", { "ja": "ONNXファイルを生成しています。", "en": "generating ONNX file." })
-        messageBuilderState.setMessage(__filename, "wait_sub2", { "ja": "しばらくお待ちください(1分程度)。", "en": "please wait... (about 1 min)." })
+        messageBuilderState.setMessage(__filename, "wait", { "ja": "しばらくお待ちください", "en": "please wait...", "vi": "Vui lòng chờ..." })
+        messageBuilderState.setMessage(__filename, "wait_sub1", { "ja": "ONNXファイルを生成しています。", "en": "generating ONNX file.", "vi": "Đang tạo tệp ONNX." })
+        messageBuilderState.setMessage(__filename, "wait_sub2", { "ja": "しばらくお待ちください(1分程度)。", "en": "please wait... (about 1 min).", "vi": "Vui lòng chờ... (khoảng 1 phút)." })
     }, [])
 
     const dialog = useMemo(() => {

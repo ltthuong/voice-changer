@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useGuiState } from "./001_GuiStateProvider";
 import { useAppState } from "../../001_provider/001_AppStateProvider";
 import { MergeElement, RVCModelSlot, RVCModelType, VoiceChangerType } from "@dannadori/voice-changer-client-js";
+import { t } from "../../i18n";
 
 export const MergeLabDialog = () => {
     const guiState = useGuiState();
@@ -87,7 +88,7 @@ export const MergeLabDialog = () => {
                             guiState.stateControls.showMergeLabCheckbox.updateState(false);
                         }}
                     >
-                        close
+                        {t("close")}
                     </div>
                 </div>
                 <div className="body-item-text"></div>
@@ -156,7 +157,7 @@ export const MergeLabDialog = () => {
         const content = (
             <div className="merge-lab-container">
                 <div className="merge-lab-type-filter">
-                    <div>Type:</div>
+                    <div>{t("Type:")}</div>
                     <div>
                         <select
                             value={currentFilter}
@@ -171,9 +172,9 @@ export const MergeLabDialog = () => {
                 <div className="merge-lab-manipulator">
                     <div className="merge-lab-model-list">{modelList}</div>
                     <div className="merge-lab-merge-buttons">
-                        <div className="merge-lab-merge-buttons-notice">The merged model is stored in the final slot. If you assign this slot, it will be overwritten.</div>
+                        <div className="merge-lab-merge-buttons-notice">{t("The merged model is stored in the final slot. If you assign this slot, it will be overwritten.")}</div>
                         <div className="merge-lab-merge-button" onClick={onMergeClicked}>
-                            merge
+                            {t("merge")}
                         </div>
                     </div>
                 </div>
@@ -181,7 +182,7 @@ export const MergeLabDialog = () => {
         );
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">MergeLab</div>
+                <div className="dialog-title">{t("MergeLab")}</div>
                 <div className="dialog-content">
                     {content}
                     {closeButtonRow}

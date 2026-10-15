@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useGuiState } from "./001_GuiStateProvider";
 import { useAppState } from "../../001_provider/001_AppStateProvider";
+import { t } from "../../i18n";
 
 
 export const GetServerInfomationDialog = () => {
@@ -12,7 +13,7 @@ export const GetServerInfomationDialog = () => {
                 <div className="body-item-text">
                 </div>
                 <div className="body-button-container body-button-container-space-around">
-                    <div className="body-button" onClick={() => { guiState.stateControls.showGetServerInformationCheckbox.updateState(false) }} >close</div>
+                    <div className="body-button" onClick={() => { guiState.stateControls.showGetServerInformationCheckbox.updateState(false) }} >{t("close")}</div>
                 </div>
                 <div className="body-item-text"></div>
             </div>
@@ -24,7 +25,7 @@ export const GetServerInfomationDialog = () => {
         )
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">Server Information</div>
+                <div className="dialog-title">{t("Server Information")}</div>
                 <div className="dialog-content">
                     {content}
                     {closeButtonRow}

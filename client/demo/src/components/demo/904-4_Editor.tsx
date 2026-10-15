@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useAppState } from "../../001_provider/001_AppStateProvider";
 import { useMessageBuilder } from "../../hooks/useMessageBuilder";
 import { ModelSlotManagerDialogScreen } from "./904_ModelSlotManagerDialog";
+import { t } from "../../i18n";
 
 export type EditorScreenProps = {
     screen: ModelSlotManagerDialogScreen
@@ -17,9 +18,9 @@ export const EditorScreen = (props: EditorScreenProps) => {
     const [targetName, setTargetName] = useState<string>()
 
     useMemo(() => {
-        messageBuilderState.setMessage(__filename, "header_message", { "ja": "詳細設定: ", "en": "Edit " })
-        messageBuilderState.setMessage(__filename, "edit_speaker", { "ja": "話者登録", "en": "Speaker ID" })
-        messageBuilderState.setMessage(__filename, "back", { "ja": "戻る", "en": "back" })
+        messageBuilderState.setMessage(__filename, "header_message", { "ja": "詳細設定: ", "en": "Edit ", "vi": "Chỉnh sửa: " })
+        messageBuilderState.setMessage(__filename, "edit_speaker", { "ja": "話者登録", "en": "Speaker ID", "vi": "ID người nói" })
+        messageBuilderState.setMessage(__filename, "back", { "ja": "戻る", "en": "back", "vi": "quay lại" })
     }, [])
 
     useEffect(() => {
@@ -44,7 +45,7 @@ export const EditorScreen = (props: EditorScreenProps) => {
 
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">Model Slot Editor</div>
+                <div className="dialog-title">{t("Model Slot Editor")}</div>
                 <div className="dialog-fixed-size-content">
                     <div className="file-uploader-header">
                         {messageBuilderState.getMessage(__filename, "header_message")} Slot[{props.targetIndex}]
@@ -67,7 +68,7 @@ export const EditorScreen = (props: EditorScreenProps) => {
                                 </select>
                             </div>
                             <div className="edit-model-slot-speakers-name-label">
-                                Name:
+                                {t("Name:")}
                             </div>
                             <div className="edit-model-slot-speakers-name-input">
                                 <input id="edit-model-slot-speakers-name-input" value={targetName} onChange={(e) => { setTargetName(e.target.value) }} />
@@ -78,12 +79,12 @@ export const EditorScreen = (props: EditorScreenProps) => {
                                     targetSlot.speakers[targetId] = inputElem.value
                                     await serverSetting.updateModelInfo(props.targetIndex, "speakers", JSON.stringify(targetSlot.speakers))
                                 }
-                                }>set</div>
+                                }>{t("set")}</div>
                                 <div className="edit-model-slot-speakers-button" onClick={async () => {
                                     delete targetSlot.speakers[targetId]
                                     await serverSetting.updateModelInfo(props.targetIndex, "speakers", JSON.stringify(targetSlot.speakers))
                                 }
-                                }>del</div>
+                                }>{t("del")}</div>
                             </div>
                         </div>
                     </div>

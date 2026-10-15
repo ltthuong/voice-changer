@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { useGuiState } from "./001_GuiStateProvider";
 import { useAppState } from "../../001_provider/001_AppStateProvider";
 import { CrossFadeOverlapSize, Protocol } from "@dannadori/voice-changer-client-js";
+import { t } from "../../i18n";
 
 export const AdvancedSettingDialog = () => {
     const guiState = useGuiState();
@@ -17,7 +18,7 @@ export const AdvancedSettingDialog = () => {
                             guiState.stateControls.showAdvancedSettingCheckbox.updateState(false);
                         }}
                     >
-                        close
+                        {t("close")}
                     </div>
                 </div>
                 <div className="body-item-text"></div>
@@ -29,7 +30,7 @@ export const AdvancedSettingDialog = () => {
         };
         const protocolRow = (
             <div className="advanced-setting-container-row">
-                <div className="advanced-setting-container-row-title">protocol</div>
+                <div className="advanced-setting-container-row-title">{t("protocol")}</div>
                 <div className="advanced-setting-container-row-field">
                     <select
                         value={setting.workletNodeSetting.protocol}
@@ -54,7 +55,7 @@ export const AdvancedSettingDialog = () => {
                 <div className="advanced-setting-container-row-field">
                     <div className="advanced-setting-container-row-field-crossfade-container">
                         <div>
-                            <div>overlap:</div>
+                            <div>{t("overlap:")}</div>
                             <div>
                                 <select
                                     className="body-select"
@@ -74,7 +75,7 @@ export const AdvancedSettingDialog = () => {
                             </div>
                         </div>
                         <div>
-                            <div>start:</div>
+                            <div>{t("start:")}</div>
                             <div>
                                 <input
                                     type="number"
@@ -89,7 +90,7 @@ export const AdvancedSettingDialog = () => {
                             </div>
                         </div>
                         <div>
-                            <div>end:</div>
+                            <div>{t("end:")}</div>
                             <div>
                                 <input
                                     type="number"
@@ -110,7 +111,7 @@ export const AdvancedSettingDialog = () => {
 
         const trancateRow = (
             <div className="advanced-setting-container-row">
-                <div className="advanced-setting-container-row-title">Trancate</div>
+                <div className="advanced-setting-container-row-title">{t("Trancate")}</div>
                 <div className="advanced-setting-container-row-field">
                     <input
                         type="number"
@@ -145,8 +146,8 @@ export const AdvancedSettingDialog = () => {
                             onSilenceFrontChanged(Number(e.target.value));
                         }}
                     >
-                        <option value="0">off</option>
-                        <option value="1">on</option>
+                        <option value="0">{t("off")}</option>
+                        <option value="1">{t("on")}</option>
                     </select>
                 </div>
             </div>
@@ -182,7 +183,7 @@ export const AdvancedSettingDialog = () => {
         };
         const rvcQualityRow = (
             <div className="advanced-setting-container-row">
-                <div className="advanced-setting-container-row-title">RVC Quality</div>
+                <div className="advanced-setting-container-row-title">{t("RVC Quality")}</div>
                 <div className="advanced-setting-container-row-field">
                     <select
                         value={serverSetting.serverSetting.rvcQuality}
@@ -190,15 +191,15 @@ export const AdvancedSettingDialog = () => {
                             onRVCQualityChanged(Number(e.target.value));
                         }}
                     >
-                        <option value="0">low</option>
-                        <option value="1">high</option>
+                        <option value="0">{t("low")}</option>
+                        <option value="1">{t("high")}</option>
                     </select>
                 </div>
             </div>
         );
         const skipPassThroughConfirmationRow = (
             <div className="advanced-setting-container-row">
-                <div className="advanced-setting-container-row-title-long">Skip Pass through confirmation</div>
+                <div className="advanced-setting-container-row-title-long">{t("Skip Pass through confirmation")}</div>
                 <div className="advanced-setting-container-row-field">
                     <select
                         value={setting.voiceChangerClientSetting.passThroughConfirmationSkip ? "1" : "0"}
@@ -206,8 +207,8 @@ export const AdvancedSettingDialog = () => {
                             setVoiceChangerClientSetting({ ...setting.voiceChangerClientSetting, passThroughConfirmationSkip: e.target.value == "1" ? true : false });
                         }}
                     >
-                        <option value="0">No</option>
-                        <option value="1">Yes</option>
+                        <option value="0">{t("No")}</option>
+                        <option value="1">{t("Yes")}</option>
                     </select>
                 </div>
             </div>
@@ -226,7 +227,7 @@ export const AdvancedSettingDialog = () => {
 
         return (
             <div className="dialog-frame">
-                <div className="dialog-title">Advanced Setting</div>
+                <div className="dialog-title">{t("Advanced Setting")}</div>
                 <div className="dialog-content">
                     {content}
                     {closeButtonRow}

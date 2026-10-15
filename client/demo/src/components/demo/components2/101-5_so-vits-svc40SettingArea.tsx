@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { useAppState } from "../../../001_provider/001_AppStateProvider";
+import { t } from "../../../i18n";
 
 export type SoVitsSVC40SettingAreaProps = {};
 
@@ -52,7 +53,7 @@ export const SoVitsSVC40SettingArea = (_props: SoVitsSVC40SettingAreaProps) => {
 
         const noise = (
             <div className="character-area-control">
-                <div className="character-area-control-title">Noise:</div>
+                <div className="character-area-control-title">{t("Noise:")}</div>
                 <div className="character-area-control-field">
                     <div className="character-area-slider-control">
                         <span className="character-area-slider-control-kind"></span>

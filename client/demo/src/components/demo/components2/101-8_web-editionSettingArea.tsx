@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useAppState } from "../../../001_provider/001_AppStateProvider";
 import { useGuiState } from "../001_GuiStateProvider";
+import { t } from "../../../i18n";
 
 export type WebEditionSettingAreaProps = {};
 
@@ -26,7 +27,7 @@ export const WebEditionSettingArea = (_props: WebEditionSettingAreaProps) => {
         const versionV2ClassName = "character-area-control-button" + (webInfoState.voiceChangerConfig.config.voiceChangerType == "rvcv2" ? " character-area-control-button-active" : " character-area-control-button-stanby");
         const verison = (
             <div className="character-area-control">
-                <div className="character-area-control-title">Version</div>
+                <div className="character-area-control-title">{t("Version")}</div>
                 <div className="character-area-control-field">
                     <div className="character-area-slider-control">
                         <span className="character-area-slider-control-kind"></span>
@@ -102,7 +103,7 @@ export const WebEditionSettingArea = (_props: WebEditionSettingAreaProps) => {
         const pitchDisableClassName = "character-area-control-button" + (webInfoState.voiceChangerConfig.useF0 == false ? " character-area-control-button-active" : " character-area-control-button-stanby");
         const pitch = (
             <div className="character-area-control">
-                <div className="character-area-control-title">Pitch</div>
+                <div className="character-area-control-title">{t("Pitch")}</div>
                 <div className="character-area-control-field">
                     <div className="character-area-slider-control">
                         <span className="character-area-slider-control-kind"></span>
@@ -114,7 +115,7 @@ export const WebEditionSettingArea = (_props: WebEditionSettingAreaProps) => {
                                     webInfoState.setVoiceChangerConfig(webInfoState.voiceChangerConfig.config.voiceChangerType, webInfoState.voiceChangerConfig.sampleRate, true, webInfoState.voiceChangerConfig.inputLength);
                                 }}
                             >
-                                Enable
+                                {t("Enable")}
                             </span>
                             <span
                                 className={!readyForConfig ? "character-area-control-button-disable" : pitchDisableClassName}
@@ -123,7 +124,7 @@ export const WebEditionSettingArea = (_props: WebEditionSettingAreaProps) => {
                                     webInfoState.setVoiceChangerConfig(webInfoState.voiceChangerConfig.config.voiceChangerType, webInfoState.voiceChangerConfig.sampleRate, false, webInfoState.voiceChangerConfig.inputLength);
                                 }}
                             >
-                                Disable
+                                {t("Disable")}
                             </span>
                         </span>
                     </div>
@@ -136,7 +137,7 @@ export const WebEditionSettingArea = (_props: WebEditionSettingAreaProps) => {
         const latencyLowClassName = "character-area-control-button" + (webInfoState.voiceChangerConfig.inputLength == "8000" ? " character-area-control-button-active" : " character-area-control-button-stanby");
         const latency = (
             <div className="character-area-control">
-                <div className="character-area-control-title">Latency</div>
+                <div className="character-area-control-title">{t("Latency")}</div>
                 <div className="character-area-control-field">
                     <div className="character-area-slider-control">
                         <span className="character-area-slider-control-kind"></span>
@@ -148,7 +149,7 @@ export const WebEditionSettingArea = (_props: WebEditionSettingAreaProps) => {
                                     webInfoState.setVoiceChangerConfig(webInfoState.voiceChangerConfig.config.voiceChangerType, webInfoState.voiceChangerConfig.sampleRate, webInfoState.voiceChangerConfig.useF0, "24000");
                                 }}
                             >
-                                High
+                                {t("High")}
                             </span>
                             <span
                                 className={!readyForConfig ? "character-area-control-button-disable" : latencyMidClassName}
@@ -157,7 +158,7 @@ export const WebEditionSettingArea = (_props: WebEditionSettingAreaProps) => {
                                     webInfoState.setVoiceChangerConfig(webInfoState.voiceChangerConfig.config.voiceChangerType, webInfoState.voiceChangerConfig.sampleRate, webInfoState.voiceChangerConfig.useF0, "12000");
                                 }}
                             >
-                                Mid
+                                {t("Mid")}
                             </span>
                             <span
                                 className={!readyForConfig ? "character-area-control-button-disable" : latencyLowClassName}
@@ -166,7 +167,7 @@ export const WebEditionSettingArea = (_props: WebEditionSettingAreaProps) => {
                                     webInfoState.setVoiceChangerConfig(webInfoState.voiceChangerConfig.config.voiceChangerType, webInfoState.voiceChangerConfig.sampleRate, webInfoState.voiceChangerConfig.useF0, "8000");
                                 }}
                             >
-                                Low
+                                {t("Low")}
                             </span>
                         </span>
                     </div>
