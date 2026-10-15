@@ -1,4 +1,4 @@
-[Japanisch](/README.md) /
+[Japanisch](/docs_i18n/README_ja.md) /
 [Englisch](/docs_i18n/README_en.md) /
 [Koreanisch](/docs_i18n/README_ko.md)/
 [Chinesisch](/docs_i18n/README_zh.md)/
@@ -11,7 +11,7 @@
 [Latein](/docs_i18n/README_la.md)/
 [Malaiisch](/docs_i18n/README_ms.md)/
 [Russisch](/docs_i18n/README_ru.md)/
-[Vietnamesisch](/docs_i18n/README_vi.md)
+[Vietnamesisch](/README.md)
 *Außer Japanisch sind alle Übersetzungen maschinell.
 
 ## VCClient

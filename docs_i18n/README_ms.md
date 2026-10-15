@@ -1,4 +1,4 @@
-[Bahasa Jepun](/README.md) /
+[Bahasa Jepun](/docs_i18n/README_ja.md) /
 [Bahasa Inggeris](/docs_i18n/README_en.md) /
 [Bahasa Korea](/docs_i18n/README_ko.md)/
 [Bahasa Cina](/docs_i18n/README_zh.md)/
@@ -11,7 +11,7 @@
 [Bahasa Latin](/docs_i18n/README_la.md)/
 [Bahasa Melayu](/docs_i18n/README_ms.md)/
 [Bahasa Rusia](/docs_i18n/README_ru.md)/
-[Bahasa Vietnam](/docs_i18n/README_vi.md)
+[Bahasa Vietnam](/README.md)
 *Selain bahasa Jepun, semua terjemahan adalah terjemahan mesin.
 
 ## VCClient

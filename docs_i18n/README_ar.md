@@ -1,4 +1,4 @@
-[اليابانية](/README.md) /
+[اليابانية](/docs_i18n/README_ja.md) /
 [الإنجليزية](/docs_i18n/README_en.md) /
 [الكورية](/docs_i18n/README_ko.md)/
 [الصينية](/docs_i18n/README_zh.md)/
@@ -11,7 +11,7 @@
 [اللاتينية](/docs_i18n/README_la.md)/
 [الماليزية](/docs_i18n/README_ms.md)/
 [الروسية](/docs_i18n/README_ru.md)/
-[الفيتنامية](/docs_i18n/README_vi.md)
+[الفيتنامية](/README.md)
 *جميع اللغات باستثناء اليابانية مترجمة آليًا.
 
 ## VCClient

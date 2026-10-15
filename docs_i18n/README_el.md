@@ -1,4 +1,4 @@
-[Ιαπωνικά](/README.md) /
+[Ιαπωνικά](/docs_i18n/README_ja.md) /
 [Αγγλικά](/docs_i18n/README_en.md) /
 [Κορεατικά](/docs_i18n/README_ko.md)/
 [Κινέζικα](/docs_i18n/README_zh.md)/
@@ -11,7 +11,7 @@
 [Λατινικά](/docs_i18n/README_la.md)/
 [Μαλαισιανά](/docs_i18n/README_ms.md)/
 [Ρωσικά](/docs_i18n/README_ru.md)/
-[Βιετναμέζικα](/docs_i18n/README_vi.md)
+[Βιετναμέζικα](/README.md)
 *Οι γλώσσες εκτός των Ιαπωνικών είναι μεταφρασμένες αυτόματα.
 
 ## VCClient

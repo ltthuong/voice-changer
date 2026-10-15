@@ -1,4 +1,4 @@
-[日语](/README.md) /
+[日语](/docs_i18n/README_ja.md) /
 [英语](/docs_i18n/README_en.md) /
 [韩语](/docs_i18n/README_ko.md)/
 [中文](/docs_i18n/README_zh.md)/
@@ -11,7 +11,7 @@
 [拉丁语](/docs_i18n/README_la.md)/
 [马来语](/docs_i18n/README_ms.md)/
 [俄语](/docs_i18n/README_ru.md)/
-[越南语](/docs_i18n/README_vi.md)
+[越南语](/README.md)
 *除日语外，其他语言均为机器翻译。
 
 ## VCClient

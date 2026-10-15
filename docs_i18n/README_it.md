@@ -1,4 +1,4 @@
-[Giapponese](/README.md) /
+[Giapponese](/docs_i18n/README_ja.md) /
 [Inglese](/docs_i18n/README_en.md) /
 [Coreano](/docs_i18n/README_ko.md)/
 [Cinese](/docs_i18n/README_zh.md)/
@@ -11,7 +11,7 @@
 [Latino](/docs_i18n/README_la.md)/
 [Malese](/docs_i18n/README_ms.md)/
 [Russo](/docs_i18n/README_ru.md)/
-[Vietnamita](/docs_i18n/README_vi.md)
+[Vietnamita](/README.md)
 *Le lingue diverse dal giapponese sono tradotte automaticamente.
 
 ## VCClient

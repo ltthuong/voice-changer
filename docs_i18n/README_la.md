@@ -1,4 +1,4 @@
-[Lingua Iaponica](/README.md) /
+[Lingua Iaponica](/docs_i18n/README_ja.md) /
 [Lingua Anglica](/docs_i18n/README_en.md) /
 [Lingua Coreana](/docs_i18n/README_ko.md)/
 [Lingua Sinica](/docs_i18n/README_zh.md)/
@@ -11,7 +11,7 @@
 [Lingua Latina](/docs_i18n/README_la.md)/
 [Lingua Malaica](/docs_i18n/README_ms.md)/
 [Lingua Russica](/docs_i18n/README_ru.md)/
-[Lingua Vietnamica](/docs_i18n/README_vi.md)
+[Lingua Vietnamica](/README.md)
 *Praeter linguam Iaponicam, omnes linguae sunt a machina translatae.
 
 ## VCClient

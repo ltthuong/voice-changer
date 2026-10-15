@@ -1,4 +1,4 @@
-[일본어](/README.md) /
+[일본어](/docs_i18n/README_ja.md) /
 [영어](/docs_i18n/README_en.md) /
 [한국어](/docs_i18n/README_ko.md)/
 [중국어](/docs_i18n/README_zh.md)/
@@ -11,7 +11,7 @@
 [라틴어](/docs_i18n/README_la.md)/
 [말레이어](/docs_i18n/README_ms.md)/
 [러시아어](/docs_i18n/README_ru.md)/
-[베트남어](/docs_i18n/README_vi.md)
+[베트남어](/README.md)
 *일본어 외에는 기계 번역입니다.
 
 ## VCClient

@@ -1,4 +1,4 @@
-[японский](/README.md) /
+[японский](/docs_i18n/README_ja.md) /
 [английский](/docs_i18n/README_en.md) /
 [корейский](/docs_i18n/README_ko.md)/
 [китайский](/docs_i18n/README_zh.md)/
@@ -11,7 +11,7 @@
 [латинский](/docs_i18n/README_la.md)/
 [малайский](/docs_i18n/README_ms.md)/
 [русский](/docs_i18n/README_ru.md)/
-[вьетнамский](/docs_i18n/README_vi.md)
+[вьетнамский](/README.md)
 *Кроме японского, все переводы выполнены машинным переводом.
 
 ## VCClient
